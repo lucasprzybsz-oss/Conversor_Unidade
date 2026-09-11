@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/layout_border"
+        android:padding="25dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            app:srcCompat="@drawable/calculator"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:text="Conversor de Unidades"
+            android:fontFamily="@font/alata"
+            android:textSize="20dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        </Space>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:gravity="center_horizontal"
+            android:text="Entrada"
+            android:textSize="20dp">
+
+        </TextView>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp">
+        </Space>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/layout_border">
+
+        </EditText>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saida"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/alata">
+
+        </TextView>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp">
+        </Space>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/layout_border">
+
+        </EditText>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+        </Space>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="2">
+
+            <Spinner
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:entries="@array/unidades">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:entries="@array/unidades">
+
+            </Spinner>
+
+        </GridLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        </Space>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado: "
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:fontFamily="@font/alata">
+
+        </TextView>
+
+
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
