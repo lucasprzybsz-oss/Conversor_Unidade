@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">My Applic</string>
     <string-array name="unidades">
-        <item>Polegadas</item>
-        <item>Metros</item>
-        <item>Kilometro</item>
-        <item>Milimetros</item>
+        <item>Quilômetro</item>
+        <item>Hectômetro</item>
+        <item>Decâmetro</item>
+        <item>Metro</item>
+        <item>Decímetro</item>
+        <item>Centímetro</item>
+        <item>Milímetro</item>
+
     </string-array>
 </resources>

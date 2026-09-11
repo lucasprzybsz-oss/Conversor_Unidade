@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,123 +10,145 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="20dp"
         android:orientation="vertical"
         android:background="@drawable/layout_border"
-        android:padding="25dp">
+        android:padding="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="94dp"
-            app:srcCompat="@drawable/calculator"
-            android:layout_marginTop="20dp"/>
+            android:layout_height="90dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Calculadora"
+            app:srcCompat="@drawable/calculator" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:layout_margin="10dp"
+            android:fontFamily="@font/alata"
             android:text="Conversor de Unidades"
-            android:fontFamily="@font/alata"
-            android:textSize="20dp"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
-        </Space>
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
             android:fontFamily="@font/alata"
-            android:gravity="center_horizontal"
-            android:text="Entrada"
-            android:textSize="20dp">
-
-        </TextView>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp">
-        </Space>
+            android:text="Valor de entrada"
+            android:textSize="15sp"
+            android:textColor="#666666" />
 
         <EditText
+            android:id="@+id/editEntrada"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/layout_border"
+            android:fontFamily="@font/alata"
+            android:hint="Digite um valor"
+            android:inputType="numberDecimal"
+            android:digits="0123456789,."
+            android:paddingHorizontal="14dp"
+            android:textSize="16sp" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Unidade de Entrada"
+                    android:textSize="13sp"
+                    android:textColor="#666666" />
+
+                <Spinner
+                    android:id="@+id/spinnerEntrada"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/layout_border"
+                    android:paddingHorizontal="10dp"
+                    android:entries="@array/unidades" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Unidade de Saída"
+                    android:textSize="13sp"
+                    android:textColor="#666666" />
+
+                <Spinner
+                    android:id="@+id/spinnerSaida"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/layout_border"
+                    android:paddingHorizontal="10dp"
+                    android:entries="@array/unidades" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            android:padding="16dp"
             android:background="@drawable/layout_border">
 
-        </EditText>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp">
-        </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Saida"
-            android:textSize="20dp"
-            android:gravity="center_horizontal"
-            android:fontFamily="@font/alata">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Resultado"
+                android:textColor="#666666"
+                android:textSize="14sp" />
 
-        </TextView>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp">
-        </Space>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:background="@drawable/layout_border">
+            <TextView
+                android:id="@+id/textResultado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/alata"
+                android:text="0,00"
+                android:textSize="26sp" />
 
-        </EditText>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp">
-        </Space>
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_gravity="center_horizontal"
-            android:columnCount="2">
-
-            <Spinner
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill_horizontal"
-                android:entries="@array/unidades">
-
-            </Spinner>
-
-            <Spinner
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill_horizontal"
-                android:entries="@array/unidades">
-
-            </Spinner>
-
-        </GridLayout>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
-        </Space>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resultado: "
-            android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
-            android:fontFamily="@font/alata">
-
-        </TextView>
-
-
-
+        </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
